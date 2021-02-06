@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SecondActivity">
+    
+    <EditText
+        android:id = "@+id/Edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint = "숫자 입력"/>
+    <EditText
+        android:id = "@+id/Edit2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint = "숫자 입력"/>
+
+    <Button
+        android:id = "@+id/BtnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "더하기"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id = "@+id/BtnSup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "빼기"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id = "@+id/BtnMul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "곱하기"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id = "@+id/BtnDiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "나누기"
+        android:layout_margin="10dp"/>
+    <Button
+        android:id = "@+id/BtnMod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "나머지 값"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id = "@+id/textResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_margin="10dp"
+        android:textColor="#FF0000"/>
+
+</LinearLayout>
