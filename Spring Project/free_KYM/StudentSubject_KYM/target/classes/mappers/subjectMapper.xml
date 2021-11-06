@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.kpu.myweb.mapper.SubjectMapper">
+  
+ 	<select id="getTime" resultType="string">
+ 		select now()
+ 	</select>
+ 	
+     <insert id="subjectInsert"> 
+   		insert into subject (subjectNum, subjectName, departNum, subjectDiv, subjectCredit, presentNum, maxNum) values
+ 		(#{subjectNum}, #{subjectName}, #{departNum}, #{subjectDiv}, #{subjectCredit}, #{presentNum}, #{maxNum})
+     </insert> 
+ 	
+     <select id="subjectSelectByid" resultType="SubjectVO">
+ 		<![CDATA[
+ 		SELECT sub.subjectNum, sub.subjectName, sub.departNum, sub.subjectDiv, sub.subjectCredit, ifnull(prefer.presentNum, 0) presentNum ,sub.maxNum
+		FROM springdb.subject sub 
+		left join 
+		(SELECT *, count(*) presentNum FROM springdb.prefer_subject group by prefer_subject.subjectNum) prefer
+		on sub.subjectNum = prefer.subjectNum
+		where sub.subjectNum = #{subjectNum}
+		]]>
+     </select>
+ 	
+     <select id="subjectSelectAll" resultType="org.kpu.myweb.domain.SubjectVO">
+     <![CDATA[
+ 		SELECT sub.subjectNum, sub.subjectName, sub.departNum, sub.subjectDiv, sub.subjectCredit, ifnull(prefer.presentNum, 0) presentNum ,sub.maxNum,
+		(case 
+			when ifnull(prefer.presentNum, 0)/maxNum >= 1.4
+    		then '매우 높음'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 1.4 and ifnull(prefer.presentNum, 0)/maxNum>= 1.1
+    		then '높음'
+			when ifnull(prefer.presentNum, 0)/maxNum < 1.1 and ifnull(prefer.presentNum, 0)/maxNum>= 0.9  
+    		then '보통'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 0.9 and ifnull(prefer.presentNum, 0)/maxNum>= 0.7  
+    		then '낮음'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 0.7 and ifnull(prefer.presentNum, 0)/maxNum>= 0  
+    		then '매우 낮음'
+		end) preference
+		FROM springdb.subject sub 
+		left join 
+		(SELECT *, count(*) presentNum FROM springdb.prefer_subject group by prefer_subject.subjectNum) prefer
+		on sub.subjectNum = prefer.subjectNum
+		order by ifnull(prefer.presentNum, 0)/maxNum desc;
+		]]>
+
+     </select>
+ 	
+     <update id="subjectUpdate">
+	 	update subject set subjectNum =#{subjectNum}, subjectName =#{subjectName}, departNum =#{departNum}, 
+			subjectDiv =#{subjectDiv}, subjectCredit =#{subjectCredit}, maxNum =#{maxNum}
+		 where subjectNum = #{subjectNum}
+    </update>
+ 
+    <delete id="subjectDelete">
+		delete from subject where subjectNum = #{subjectNum}
+    </delete>
+    
+    <select id="matchSubjectlist" resultType="SubjectVO">
+ 	<![CDATA[
+ 		SELECT sub.subjectNum, sub.subjectName, sub.departNum, sub.subjectDiv, sub.subjectCredit, ifnull(prefer.presentNum, 0) presentNum ,sub.maxNum,
+		(case 
+			when ifnull(prefer.presentNum, 0)/maxNum >= 1.4
+    		then '매우 높음'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 1.4 and ifnull(prefer.presentNum, 0)/maxNum>= 1.1
+    		then '높음'
+			when ifnull(prefer.presentNum, 0)/maxNum < 1.1 and ifnull(prefer.presentNum, 0)/maxNum>= 0.9  
+    		then '보통'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 0.9 and ifnull(prefer.presentNum, 0)/maxNum>= 0.7  
+    		then '낮음'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 0.7 and ifnull(prefer.presentNum, 0)/maxNum>= 0  
+    		then '매우 낮음'
+		end) preference
+		FROM springdb.subject sub 
+		left join
+		(SELECT *, count(*) presentNum FROM springdb.prefer_subject group by prefer_subject.subjectNum) prefer
+		on sub.subjectNum = prefer.subjectNum
+		WHERE sub.departNum = #{departNum} OR sub.departNum > 100
+		order by ifnull(prefer.presentNum, 0)/maxNum desc;
+		]]>
+<!--  		select * from subject where departNum = #{departNum} -->
+    </select>
+
+    
+</mapper>  

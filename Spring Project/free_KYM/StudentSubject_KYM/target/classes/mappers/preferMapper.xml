@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.kpu.myweb.mapper.PreferMapper">
+  
+ 	<select id="getTime" resultType="string">
+ 		select now()
+ 	</select>
+ 	
+ 	
+ 	<select id="preferAdd" resultType="int">
+ 		INSERT INTO springdb.prefer_subject(studentNum,subjectNum) VALUES (#{studentNum}, #{subjectNum})
+    </select>
+    
+     <select id="preferDelete" resultType="int">
+ 		DELETE FROM springdb.prefer_subject WHERE prefer_subject.studentNum =#{studentNum} AND prefer_subject.subjectNum = #{subjectNum}
+    </select>
+ 	
+ 	
+ 	
+ 	<select id="preferSelectList" resultType="PreferVO">
+ 	<![CDATA[
+ 		SELECT sub.subjectNum, sub.subjectName, sub.departNum, sub.subjectDiv, sub.subjectCredit, ifnull(prefer.presentNum, 0) presentNum ,sub.maxNum,
+		(case 
+			when ifnull(prefer.presentNum, 0)/maxNum >= 1.4
+    		then '매우 높음'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 1.4 and ifnull(prefer.presentNum, 0)/maxNum>= 1.1
+    		then '높음'
+			when ifnull(prefer.presentNum, 0)/maxNum < 1.1 and ifnull(prefer.presentNum, 0)/maxNum>= 0.9  
+    		then '보통'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 0.9 and ifnull(prefer.presentNum, 0)/maxNum>= 0.7  
+    		then '낮음'
+    		when ifnull(prefer.presentNum, 0)/maxNum < 0.7 and ifnull(prefer.presentNum, 0)/maxNum>= 0  
+    		then '매우 낮음'
+		end) preference
+		FROM springdb.subject sub
+		right join 
+		(SELECT *, count(*) presentNum FROM springdb.prefer_subject where prefer_subject.studentNum = #{studentNum} group by prefer_subject.subjectNum) prefer
+		on sub.subjectNum = prefer.subjectNum
+        
+		order by ifnull(prefer.presentNum, 0)/maxNum desc;
+		]]>
+    </select>
+     
+     
+     
+     
+     
+
+ 	
+     <select id="subjectSelectByid" resultType="SubjectVO">
+ 		select * from subject where subjectNum = #{subjectNum}
+     </select>
+ 	
+     <select id="preferSelectAll" resultType="org.kpu.myweb.domain.SubjectVO">
+ 		select sub.subjectNum, sub.subjectName, sub.departNum, sub.subjectDiv, sub.subjectCredit, sub.presentNum,  sub.maxNum, prefer.preference  
+ 		from subject sub inner join prefer_subject prefer
+     </select>
+
+       	<select id="prefercreditCount" resultType="int">
+ 		<![CDATA[
+ 		SELECT ifnull(sum(sub.subjectCredit),0)
+		FROM springdb.subject sub
+		left join 
+		(SELECT * FROM springdb.prefer_subject) prefer
+		on sub.subjectNum = prefer.subjectNum
+		where prefer.studentNum = #{studentNum}
+		]]>
+
+    </select>
+    
+	
+</mapper>  

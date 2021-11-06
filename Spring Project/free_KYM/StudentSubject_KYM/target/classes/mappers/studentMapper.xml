@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.kpu.myweb.mapper.StudentMapper">
+  
+ 	<select id="getTime" resultType="string">
+ 		select now()
+ 	</select>
+ 	
+     <insert id="insert"> 
+   		insert into student_info (id, name, studentNum, depart, departNum, phoneNum) values
+ 		(#{id}, #{name}, #{studentNum}, #{depart}, #{departNum}, #{phoneNum})
+     </insert> 
+ 	
+     <select id="selectByid" resultType="StudentVO">
+ 		select * from student_info where id = #{id}
+     </select>
+ 	
+     <select id="selectAll" resultType="org.kpu.myweb.domain.StudentVO">
+     <![CDATA[
+ 		select * from student_info
+      ]]> 
+     </select>
+ 	
+     <update id="update">
+	 	update student_info set id =#{id}, name =#{name}, studentNum =#{studentNum}, 
+			depart =#{depart}, departNum =#{departNum}, phoneNum =#{phoneNum} 
+		 where id = #{id}
+    </update>
+    
+    <update id="txupdate">
+	 	update student_info set name =#{name}  
+		where id = #{id}
+    </update>
+ 
+    <delete id="delete">
+		delete from student_info where id = #{id}
+    </delete>
+	
+</mapper>  
