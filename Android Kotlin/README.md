@@ -1,2 +1,23 @@
-# KPU_MajorClass
-학교 전공수업 내용
+# Kotlin / 단어 암기 앱
+
+![슬라이드1](https://user-images.githubusercontent.com/51106074/140596009-f52cfbed-f46c-4a4f-9b27-264321f843d9.JPG)
+![슬라이드2](https://user-images.githubusercontent.com/51106074/140596010-3348b21e-8811-40ef-ab72-3e5a06186468.JPG)
+![슬라이드7](https://user-images.githubusercontent.com/51106074/140596011-042214a4-bc1e-4197-81f5-99b6933cf5d2.JPG)
+![슬라이드8](https://user-images.githubusercontent.com/51106074/140596012-125095dc-2b3c-4833-9cb9-69228744904e.JPG)
+![슬라이드15](https://user-images.githubusercontent.com/51106074/140595992-045e9a4e-64b5-4a7b-8194-9fa8d07f4028.JPG)
+![슬라이드16](https://user-images.githubusercontent.com/51106074/140595993-f494e686-d41b-4d84-8851-a889e0d8252c.JPG)
+![슬라이드17](https://user-images.githubusercontent.com/51106074/140595994-76af65e4-a8df-4845-add6-0153e8966272.JPG)
+![슬라이드18](https://user-images.githubusercontent.com/51106074/140595995-85ca6390-56f2-4286-8f32-a30aa2201342.JPG)
+![슬라이드19](https://user-images.githubusercontent.com/51106074/140595996-a55bc718-e4ba-4a65-b733-b8489021329d.JPG)
+![슬라이드20](https://user-images.githubusercontent.com/51106074/140595997-71219ae2-3ffa-46c7-afd3-fc80b94bdd21.JPG)
+![슬라이드21](https://user-images.githubusercontent.com/51106074/140595998-c329c260-f8d4-4fe6-8543-a756e95dbea8.JPG)
+![슬라이드22](https://user-images.githubusercontent.com/51106074/140595999-0ca4e6a6-c764-4dae-8331-b4d67652d10d.JPG)
+![슬라이드23](https://user-images.githubusercontent.com/51106074/140596000-c2962df4-77d9-4eba-ab8e-3f4650868b36.JPG)
+![슬라이드24](https://user-images.githubusercontent.com/51106074/140596002-c840de26-2538-4d9c-9ee2-227e78616774.JPG)
+![슬라이드25](https://user-images.githubusercontent.com/51106074/140596003-c6d016d5-1e2d-4a46-8bc2-2b3539bd7ea0.JPG)
+![슬라이드26](https://user-images.githubusercontent.com/51106074/140596004-9849e764-020b-4338-842a-ae738d4cc3ad.JPG)
+![슬라이드27](https://user-images.githubusercontent.com/51106074/140596005-fd99a509-47ff-4285-b788-faa032a30d60.JPG)
+![슬라이드28](https://user-images.githubusercontent.com/51106074/140596006-52617a96-3c92-4a44-9b51-6ae7217ba4ef.JPG)
+![슬라이드29](https://user-images.githubusercontent.com/51106074/140596007-a8c64e2c-ce4a-4673-9a04-615db9500500.JPG)
+![슬라이드30](https://user-images.githubusercontent.com/51106074/140596008-39368408-2f87-4db7-94b0-2c9659f71e93.JPG)
+
