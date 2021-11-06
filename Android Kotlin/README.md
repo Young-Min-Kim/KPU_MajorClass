@@ -1,6 +1,9 @@
 # Kotlin / 단어 암기 앱
 
-
+![슬라이드1](https://user-images.githubusercontent.com/51106074/140596009-f52cfbed-f46c-4a4f-9b27-264321f843d9.JPG)
+![슬라이드2](https://user-images.githubusercontent.com/51106074/140596010-3348b21e-8811-40ef-ab72-3e5a06186468.JPG)
+![슬라이드7](https://user-images.githubusercontent.com/51106074/140596011-042214a4-bc1e-4197-81f5-99b6933cf5d2.JPG)
+![슬라이드8](https://user-images.githubusercontent.com/51106074/140596012-125095dc-2b3c-4833-9cb9-69228744904e.JPG)
 ![슬라이드15](https://user-images.githubusercontent.com/51106074/140595992-045e9a4e-64b5-4a7b-8194-9fa8d07f4028.JPG)
 ![슬라이드16](https://user-images.githubusercontent.com/51106074/140595993-f494e686-d41b-4d84-8851-a889e0d8252c.JPG)
 ![슬라이드17](https://user-images.githubusercontent.com/51106074/140595994-76af65e4-a8df-4845-add6-0153e8966272.JPG)
@@ -17,7 +20,4 @@
 ![슬라이드28](https://user-images.githubusercontent.com/51106074/140596006-52617a96-3c92-4a44-9b51-6ae7217ba4ef.JPG)
 ![슬라이드29](https://user-images.githubusercontent.com/51106074/140596007-a8c64e2c-ce4a-4673-9a04-615db9500500.JPG)
 ![슬라이드30](https://user-images.githubusercontent.com/51106074/140596008-39368408-2f87-4db7-94b0-2c9659f71e93.JPG)
-![슬라이드1](https://user-images.githubusercontent.com/51106074/140596009-f52cfbed-f46c-4a4f-9b27-264321f843d9.JPG)
-![슬라이드2](https://user-images.githubusercontent.com/51106074/140596010-3348b21e-8811-40ef-ab72-3e5a06186468.JPG)
-![슬라이드7](https://user-images.githubusercontent.com/51106074/140596011-042214a4-bc1e-4197-81f5-99b6933cf5d2.JPG)
-![슬라이드8](https://user-images.githubusercontent.com/51106074/140596012-125095dc-2b3c-4833-9cb9-69228744904e.JPG)
+
